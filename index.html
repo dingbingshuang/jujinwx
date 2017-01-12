@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="js/jquery-3.1.1.min.js"></script>
+<style type="text/css">
+   body{
+   	overflow-x: hidden; overflow-y: scroll; 
+   	margin: 0px;
+   }
+   .qwe{
+   	position: absolute;
+   	width: 200px;
+   	height:200px;
+   	background-color: #fff;
+   }
+   .nav{
+   	z-index: 9999;
+   	position: fixed;top:40%;left: 0px;
+   }
+   .nav button{
+   	display: block;
+   	padding: 5px 30px;
+   	margin-top: 20px;
+   }
+    .wel{opacity: 0;
+    	font-size: 82px;
+    	color: #fff;
+    	position: absolute;
+    	top: 40%;
+    	left: 38%;
+    }
+    .pic1{opacity: 0;
+    	position:absolute;
+    	top: 20%;
+    	left: 0%;
+    	width: 300px;
+    	height: 200px;
+    }
+     .pic2{opacity: 0;
+     	position:absolute;
+    	top: 50%;
+    	left: 0%;
+    	width: 300px;
+    	height: 200px;
+    }
+       .pic3{opacity: 0;
+     	position:absolute;
+    	top: 20%;
+    	right: 0%;
+    	width: 300px;
+    	height: 200px;
+    }
+       .pic4{opacity: 0;
+     	position:absolute;
+    	top: 50%;
+    	right: 0%;
+    	width: 300px;
+    	height: 200px;
+    }
+      .pic1 img,.pic2 img,.pic3 img,.pic4 img{
+    	width: 100%;
+    	height: 100%;
+    }
+    .f{
+    	width: 300px;
+    	height: 300px;
+    	position: absolute;
+    	top: 60%;
+    	right: 10%;
+    }
+      .f img{
+    	width: 100%;
+    	height: 100%;
+    }
+</style>
+</head>
+<body>
+<div class="nav">
+	  
+    <button class="scroll_top1">1</button>
+
+    <button class="scroll_top2">2</button>
+
+    <button class="scroll_top3">3</button>
+</div>
+    <div class="q" id="1" style="
+   	background: url(img/2.jpg); text-align: center;">
+   	<div class="wel"> W E L C O M E</div>
+   
+    </div>
+
+    <div class="q" id="2" style="background: url(img/3.jpg); 
+     	position: relative;">
+       <div class="pic1">
+       	<img src="img/01.jpg">
+       </div>
+        <div class="pic2">
+       	<img src="img/02.jpg">
+       </div>
+        <div class="pic3">
+       	<img src="img/03.jpg">
+       </div>
+        <div class="pic4">
+       	<img src="img/04.jpg">
+       </div>
+    </div>
+
+    <div class="q"  id="3" style="background: url(img/4.jpg);position: relative;"> 
+      <div class="f">
+      	<img src="img/123.png">
+      </div>
+    </div>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+                 $(".q").height($(window).height());
+                  $(".q").width($(window).width());
+                  $('.nav button').click(function(){ var $a=$(this).index(); $('html,body').animate({scrollTop:$('.q').eq($a).offset().top}, 800);});
+
+});
+    	
+    $(document).ready(function(){
+    	 var $num=$(window).scrollTop();
+         if ($num == $("#1").offset().top){
+        $(".wel").stop(true).animate({
+        	opacity:"1"
+        },2000);
+    }
+  });
+      $(document).scroll(function(event) {
+       var $num1=$(window).scrollTop();
+      if ($num1 >= ($("#1").offset().top) + 500 && $num1 < ($("#2").offset().top) + 100){
+        $(".pic1").animate({
+        	left:"30%",
+        	opacity:"1"
+        },1600);
+        $(".pic2").animate({
+        	left:"30%",
+        	opacity:"1"
+        },2000);
+         $(".pic3").animate({
+        	right:"30%",
+        	opacity:"1"
+        },1600);
+          $(".pic4").animate({
+        	right:"30%",
+        	opacity:"1"
+        },2000);
+    }
+    //   else{
+    // $(".qwe").stop(true).animate({
+    //     	left:"0px"
+    //     },3000);
+    //   }
+  if ($num1 !== $("#1").offset().top){
+        $(".wel").stop(true).animate({
+        	top:"0px"
+        },1000);
+    }
+    else{
+    	 $(".wel").stop(true).animate({
+        	top:"40%"
+        },1000);
+    }
+
+    if ($num1 > ($("#3").offset().top) - 200  ){
+        $(".f").animate({
+        	top:"20%",
+        	right:"60%"
+        },3000);
+    }
+  
+});
+    </script>
+</body>
+</html>
