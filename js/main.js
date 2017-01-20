@@ -8,16 +8,23 @@
 $(document).ready(function(){
                 
                   $('.nav button').click(function(){ var $a=$(this).index(); $('html,body').animate({scrollTop:$('.container').eq($a).offset().top}, 800);});
+                   $('.main9 .con9').mouseover(function(event) {
+                     var $b=$(this).index(); $(".con9").eq($b).removeClass('off').addClass('on');
+                   });
+                     $('.main9 .con9').mouseleave(function(event) {
+                     var $b=$(this).index(); $(".con9").eq($b).removeClass('on').addClass('off');
+                   });
+                   
 
 });
     	
     $(document).ready(function(){
-    	 var $num=$(window).scrollTop();
-         if ($num == $("#1").offset().top){
-        $(".wel").stop(true).animate({
-        	opacity:"1"
-        },2000);
-    }
+    	 
+         
+        $(".wel").animate({
+        	top:"40%"
+        },1000);
+  
   });
   $(document).scroll(function(event) {
        var $num1=$(window).scrollTop();
@@ -63,17 +70,17 @@ $(document).ready(function(){
     }
 
 
-  if ($num1 !== $("#1").offset().top){
-        $(".wel").stop(true).animate({
-        	top:"0px"
-        },1000);
-    }
-    else{
-    	 $(".wel").stop(true).animate({
-        	top:"40%"
-        },1000);
-    }
- if ($num1 >= ($("#6").offset().top) - 100){
+  // if ($num1 !== $("#1").offset().top){
+  //       $(".wel").stop(true).animate({
+  //       	top:"0px"
+  //       },1000);
+  //   }
+  //   else{
+  //   	 $(".wel").stop(true).animate({
+  //       	top:"40%"
+  //       },1000);
+  //   }
+ if ($num1 >= ($("#7").offset().top) - 100 && $num1 < ($("#7").offset().top) + 460){
         $(".pic6-1").animate({
           width:"15%",
           opacity:"1"
@@ -113,7 +120,7 @@ $(document).ready(function(){
         },3600);
        
     }
-      if ($num1 >= ($("#7").offset().top) - 120){
+      if ($num1 >= ($("#7").offset().top) + 420 && $num1 < ($("#7").offset().top) + 660){
         $(".pic7-1").animate({
           top:"40%",
           opacity:"1"
