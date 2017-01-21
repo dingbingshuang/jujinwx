@@ -8,13 +8,19 @@
 $(document).ready(function(){
                 
                   $('.nav button').click(function(){ var $a=$(this).index(); $('html,body').animate({scrollTop:$('.container').eq($a).offset().top}, 800);});
+                   $('.right-main .gotop').click(function(){ $('html,body').animate({scrollTop:$('#1').offset().top}, 800);});
                    $('.main9 .con9').mouseover(function(event) {
                      var $b=$(this).index(); $(".con9").eq($b).removeClass('off').addClass('on');
                    });
                      $('.main9 .con9').mouseleave(function(event) {
                      var $b=$(this).index(); $(".con9").eq($b).removeClass('on').addClass('off');
                    });
-                   
+                      $('.right-main .weixin').mouseover(function(event) {
+                      $('.right-2').show();
+                   });
+                     $('.right-main .weixin').mouseleave(function(event) {
+                     $('.right-2').hide();
+                   });
 
 });
     	
