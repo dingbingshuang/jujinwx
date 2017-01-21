@@ -48,12 +48,13 @@
    	position: fixed;top:25%;left: 0px;
    }
    .nav button{
+    background: #fff;
    	display: block;
    	padding: 5px 20px;
    	margin-top: 20px;
     border-radius: 20px;
     border: 0px;
-    color: black;
+    color: #6c6c6c;
    }
     .wel{
       width: 60%;
